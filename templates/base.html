@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>УчитсяВесело #история</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+
+        <a href="{{ url_for('index') }}" class="site-title">
+            Учится<span>Весело</span><small>#история</small>
+        </a>
+
+        <nav class="quest-menu">
+            <span class="menu-title">Квесты ▾</span>
+            <div class="menu-dropdown">
+                {% for quest_id, quest in quests.items() %}
+                <a href="{{ url_for('question', quest_id=quest_id, question_id=0) }}">
+                    {{ quest.title }}
+                </a>
+                {% endfor %}
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+<main class="content">
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>

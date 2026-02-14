@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="question-box">
+
+    <div class="question-context">
+        {{ question.context }}
+    </div>
+
+    {% if question.media %}
+    <div class="question-media">
+        {% if question.media.type == "image" %}
+            <img src="{{ url_for('static', filename='images/' + question.media.file) }}">
+        {% elif question.media.type == "video" %}
+            <video autoplay loop muted>
+                <source src="{{ url_for('static', filename='videos/' + question.media.file) }}">
+            </video>
+        {% endif %}
+    </div>
+    {% endif %}
+
+
+    <h2 class="question-text">
+        {{ question.question }}
+    </h2>
+
+    <div class="answers">
+        {% for answer in question.answers %}
+        <button class="answer-btn"
+                onclick="showResult(
+                {{ 'true' if answer.correct else 'false' }},
+                '{{ answer.explanation }}'
+                )">
+            {{ answer.text }}
+        </button>
+        {% endfor %}
+    </div>
+
+    <div class="navigation">
+        {% if question_id > 0 %}
+        <a class="back-btn"
+           href="{{ url_for('question', quest_id=quest_id, question_id=question_id-1) }}">
+            ← Назад
+        </a>
+        {% endif %}
+    </div>
+
+</div>
+
+
+<div id="result-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+
+        <h2 id="result-title"></h2>
+        <p id="result-text"></p>
+
+        <a id="next-btn"
+           class="next-btn"
+           href="{{ url_for('question', quest_id=quest_id, question_id=question_id+1) }}">
+            Дальше →
+        </a>
+    </div>
+</div>
+
+<script>
+function showResult(isCorrect, explanation) {
+    const modal = document.getElementById("result-modal");
+    const title = document.getElementById("result-title");
+    const text = document.getElementById("result-text");
+    const nextBtn = document.getElementById("next-btn");
+
+    modal.style.display = "flex";
+
+    if (isCorrect) {
+        title.innerText = "Верно!";
+        text.innerText = explanation;
+        nextBtn.style.display = "inline-block";
+    } else {
+        title.innerText = "Неверно";
+        text.innerText = explanation;
+        nextBtn.style.display = "none";
+    }
+}
+
+function closeModal() {
+    document.getElementById("result-modal").style.display = "none";
+}
+</script>
+
+{% endblock %}

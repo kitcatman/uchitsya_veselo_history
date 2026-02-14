@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="result-box">
+
+    <h1>Расследование завершено</h1>
+
+    <p class="result-main">
+        {{ quest.result_text }}
+    </p>
+
+    <div class="result-extra">
+        <p>
+            История гибели Николая II и его семьи — это не только трагедия,
+            но и важный урок о переломных моментах истории,
+            когда решения отдельных людей влияли на судьбу целой страны.
+        </p>
+    </div>
+
+    <a class="home-btn" href="{{ url_for('index') }}">
+        Вернуться к квестам
+    </a>
+
+</div>
+
+{% endblock %}
