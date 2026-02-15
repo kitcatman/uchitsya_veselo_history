@@ -7,13 +7,19 @@
     {% for quest_id, quest in quests.items() %}
     <div class="quest-card">
         <div class="quest-image">
-            <img src="{{ url_for('static', filename='images/placeholder.jpg') }}" alt="Квест">
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename=quest.card_image if quest.card_image else 'images/placeholder.jpg'
+                ) }}"
+                alt="{{ quest.title }}"
+            >
         </div>
         <h2>{{ quest.title }}</h2>
         <p>{{ quest.description }}</p>
         <a class="start-button"
            href="{{ url_for('question', quest_id=quest_id, question_id=0) }}">
-            Начать расследование
+            Начать квест
         </a>
     </div>
     {% endfor %}

@@ -73,7 +73,7 @@ body {
     margin-top: 15px;
 }
 
-/* ===== ВОПРОС ===== */
+/* ----- вопросы ----- */
 
 .question-box {
     background: white;
@@ -114,7 +114,7 @@ body {
     color: white;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
+/* ----- навигация ----- */
 
 .navigation {
     margin-top: 20px;
@@ -126,7 +126,7 @@ body {
     font-weight: bold;
 }
 
-/* ===== МОДАЛЬНОЕ ОКНО ===== */
+/* ----- окно ----- */
 
 .modal {
     display: none;
@@ -165,7 +165,7 @@ body {
     text-decoration: none;
 }
 
-/* ===== ИТОГ ===== */
+/* ----- итог ----- */
 
 .result-box {
     background: white;
@@ -186,7 +186,7 @@ body {
     text-decoration: none;
 }
 
-/* ===== ШАПКА ===== */
+/* ----- шапка ----- */
 
 .header {
     background: #ff7a00;
@@ -218,7 +218,7 @@ body {
     margin-left: 2px;
 }
 
-/* ===== МЕНЮ КВЕСТОВ ===== */
+/* ----- меню с квестами ----- */
 
 .quest-menu {
     position: relative;
@@ -232,7 +232,7 @@ body {
     padding: 5px 10px;
 }
 
-/* само меню */
+/* ----- поле меню ----- */
 .menu-dropdown {
     position: absolute;
     right: 0;
@@ -244,7 +244,6 @@ body {
     overflow: hidden;
     z-index: 100;
 
-    /* ключевые строки */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-5px);
@@ -252,7 +251,7 @@ body {
     pointer-events: none;
 }
 
-/* пункты */
+/* ----- пункты ----- */
 .menu-dropdown a {
     display: block;
     padding: 12px 16px;
@@ -262,7 +261,6 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* убираем линию у последнего */
 .menu-dropdown a:last-child {
     border-bottom: none;
 }
@@ -271,7 +269,7 @@ body {
     background: #fff4e6;
 }
 
-/* ПОЯВЛЕНИЕ МЕНЮ */
+/* ----- появление ----- */
 .quest-menu:hover .menu-dropdown,
 .menu-dropdown:hover {
     opacity: 1;
@@ -280,7 +278,7 @@ body {
     pointer-events: auto;
 }
 
-/* ===== КАРТОЧКИ КВЕСТОВ ===== */
+/* ----- карточки квестов ----- */
 
 .quest-card {
     background: white;
@@ -332,7 +330,7 @@ body {
     text-decoration: none;
 }
 
-/* ===== МЕДИА В ВОПРОСАХ ===== */
+/* ----- медиа файлы в вопросах ----- */
 
 .question-media {
     margin: 20px 0;
