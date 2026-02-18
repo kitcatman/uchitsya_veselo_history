@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="page-title">Доступные квесты</h1>
+<h1 class="page-title">Доступные тесты</h1>
 
 <div class="quest-grid">
     {% for quest_id, quest in quests.items() %}
@@ -19,7 +19,7 @@
         <p>{{ quest.description }}</p>
         <a class="start-button"
            href="{{ url_for('question', quest_id=quest_id, question_id=0) }}">
-            Начать квест
+            Начать тест
         </a>
     </div>
     {% endfor %}

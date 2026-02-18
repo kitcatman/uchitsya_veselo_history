@@ -18,7 +18,7 @@
         </a>
 
         <nav class="quest-menu">
-            <span class="menu-title">Квесты ▾</span>
+            <span class="menu-title">Тесты ▾</span>
             <div class="menu-dropdown">
                 {% for quest_id, quest in quests.items() %}
                 <a href="{{ url_for('question', quest_id=quest_id, question_id=0) }}">
