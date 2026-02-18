@@ -247,8 +247,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-5px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
 }
 
 /* ----- пункты ----- */
@@ -275,7 +274,6 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    pointer-events: auto;
 }
 
 /* ----- карточки квестов ----- */
