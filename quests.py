@@ -1,7 +1,7 @@
 nikolay2 = {
     "id": "nikolay2",
     "title": "Расследование убийства Николая II",
-    "description": "Исторический квест о последних днях семьи Романовых.",
+    "description": "Исторический тест о последних днях семьи Романовых.",
     "card_image": "images/nikolay2_0.jpg",
     "questions": [
         {
