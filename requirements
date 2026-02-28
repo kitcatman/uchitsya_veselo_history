@@ -1,4 +1,0 @@
-flask
-gunicorn #больше не используется
-
-# cd /var/www/uchitsya_veselo_history && git pull && sudo systemctl restart uchitsya_veselo

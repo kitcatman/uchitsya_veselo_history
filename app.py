@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
-from quests import ALL_QUESTS as QUESTS
+from quests_loader import load_quests
+
+QUESTS = load_quests()
 
 
 app = Flask(__name__)
@@ -46,3 +48,5 @@ def result(quest_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# cd /var/www/uchitsya_veselo_history && git pull && sudo systemctl restart uchitsya_veselo
